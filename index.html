@@ -21,17 +21,23 @@
         <div class="shape shape-2"></div>
     </div>
 
-    <nav class="navbar">
+
+<nav class="navbar">
         <div class="nav-content">
             <a href="#home" class="logo">
                 <img src="logo.png" alt="silvalab logo" height="49" style="mix-blend-mode: multiply;">
             </a>
-            <ul class="nav-links">
-                <li><a href="#about">team</a></li>
-                <li><a href="#research">research</a></li>
-                <li><a href="#publications">publications</a></li>
-                <li><a href="#contact">contact</a></li>
-                <li><a href="#funding">funding</a></li>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-item">team</a></li>
+                <li><a href="#research" class="nav-item">research</a></li>
+                <li><a href="#publications" class="nav-item">publications</a></li>
+                <li><a href="#contact" class="nav-item">contact</a></li>
+                <li><a href="#funding" class="nav-item">funding</a></li>
             </ul>
         </div>
     </nav>
@@ -235,6 +241,25 @@
         </div>
     </footer>
 
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+            });
+        });
+    </script>
+
 </body>
+
 
 </html>
