@@ -19,10 +19,11 @@
 
     --viridis-gradient: linear-gradient(135deg, var(--purple-main) 0%, var(--warm-mid) 60%, var(--warm-light) 100%);
 
-    /* Typography */
-    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+    /* Typography — original site fonts */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+    --font-serif: 'Playfair Display', serif;
+    --font-display: var(--font-sans);
+    --font-mono: var(--font-sans);
 
     --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -265,6 +266,7 @@ main .section:first-child .section-content {
 
 .about-text .role {
     font-family: var(--font-mono);
+    font-weight: 600;
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     color: var(--warm-mid);
@@ -308,6 +310,7 @@ main .section:first-child .section-content {
 /* Trainees */
 .team-subtitle {
     font-family: var(--font-mono);
+    font-weight: 600;
     font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: lowercase;
@@ -353,6 +356,7 @@ main .section:first-child .section-content {
 
 .member-text .role {
     font-family: var(--font-mono);
+    font-weight: 600;
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     color: var(--warm-mid);
