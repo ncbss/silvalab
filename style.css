@@ -129,15 +129,10 @@ main .section:first-child .section-content {
     letter-spacing: -0.02em;
 }
 
-/* Signature: EEG signal line under section titles */
+/* Signature: warm accent full stop after section titles */
 .section-title::after {
-    content: '';
-    display: block;
-    margin-top: 0.9rem;
-    width: 132px;
-    height: 18px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='18' viewBox='0 0 132 18'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%236b2f6e'/%3E%3Cstop offset='1' stop-color='%23c77a5c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 9 H52 L58 9 L62 2 L67 16 L71 6 L75 9 H132' fill='none' stroke='url(%23g)' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
+    content: '.';
+    color: var(--warm-mid);
 }
 
 /* Navigation */
@@ -245,9 +240,6 @@ main .section:first-child .section-content {
     grid-template-columns: 240px 1fr;
     gap: 3.5rem;
     align-items: start;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 4rem;
 }
 
 .about-image img {
@@ -318,6 +310,12 @@ main .section:first-child .section-content {
     margin-bottom: 2.5rem;
 }
 
+.team-subtitle--divided {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
 .team-list {
     display: flex;
     flex-direction: column;
@@ -380,6 +378,10 @@ main .section:first-child .section-content {
     color: var(--text-main);
     max-width: 780px;
     margin-bottom: 3.5rem;
+}
+
+.lead-text:has(+ .lead-text) {
+    margin-bottom: 1.4rem;
 }
 
 .research-pillars {
@@ -487,9 +489,34 @@ main .section:first-child .section-content {
     gap: 2rem 2.5rem;
 }
 
+@media (min-width: 1000px) {
+    .funding-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2.25rem 1.75rem;
+    }
+
+    .funding-grid .funder-name {
+        font-size: 0.92rem;
+    }
+}
+
 .funder {
     border-top: 1px solid var(--border-color);
     padding-top: 1.1rem;
+}
+
+.funder-logo {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.9rem;
+}
+
+.funder-logo img {
+    max-height: 56px;
+    max-width: min(200px, 100%);
+    width: auto;
+    object-fit: contain;
 }
 
 .funder-name {
@@ -617,8 +644,6 @@ footer p {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
-        padding-bottom: 3rem;
-        margin-bottom: 3rem;
     }
 
     .about-image img {
